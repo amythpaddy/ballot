@@ -1,30 +1,36 @@
 class QuestionData {
   String _question;
-  List _optionList;
+  String _option1;
+  String _option2;
+  String _option3;
+  String _option4;
   String _id;
   List _optionVots;
   int _totalVotes;
 
   QuestionData() {
     _question = "";
-    _optionList = new List();
+    _option1 = '';
+    _option2 = '';
+    _option3 = '';
+    _option4 = '';
     this._optionVots = new List();
     _id = "";
   }
 
   void updateData(Map data) {
     this._question = data["question"];
-    this._optionList.add(data["option1"]);
-    this._optionList.add(data["option2"]);
-    this._optionList.add(data["option3"]);
-    this._optionList.add(data["option4"]);
+    _option1 = data["option1"];
+    _option2 = data["option2"];
+    _option3 = data["option3"];
+    _option4 = data["option4"];
     this._id = data["questionid"];
 
 //    print(_id);
   }
 
   String get id => _id;
-  List get optionList => _optionList;
+  String get option1 => _option1;
   String get question => _question;
 
   void updateVoteData(Map data) {
@@ -52,4 +58,10 @@ class QuestionData {
   int get totalVotes => _totalVotes;
 
   List get optionVotes => _optionVots;
+
+  String get option2 => _option2;
+
+  String get option3 => _option3;
+
+  String get option4 => _option4;
 }
